@@ -23,8 +23,8 @@ app.put("/users/1", (req, res) => {
 });
 
 app.delete("/users/1", (req, res) => {
-  state.users[0]["name"] = "";
-  res.send("deleted the item");
+  state.users.shift();
+  res.send("deleted");
 });
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
