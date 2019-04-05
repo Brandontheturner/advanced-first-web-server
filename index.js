@@ -1,7 +1,12 @@
 const express = require("express");
+const bodyParser = require("body-parser");
 const app = express();
 const port = process.env.PORT || 4000;
 const state = require("./state");
+
+app.post("/users", (req, res) => {
+  res.send(state.users);
+});
 
 app.post("/users", (req, res) => {
   state.users.push({
