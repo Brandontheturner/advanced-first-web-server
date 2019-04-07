@@ -5,9 +5,6 @@ const port = process.env.PORT || 4000;
 const state = require("./state");
 
 app.use(bodyParser.json());
-app.use(function(req, res) {
-  res.write();
-});
 
 app.post("/users", (req, res) => {
   state.users.push({
