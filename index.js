@@ -5,16 +5,19 @@ const port = process.env.PORT || 4000;
 const state = require("./state");
 
 app.use(bodyParser.json());
-
 app.post("/users", (req, res) => {
-  state.users.push({
-    _id: 6,
-    name: "David CopperField",
-    occupation: "Street Magician",
-    avatar: "https://upload.wikimedia.org/wikipedia/en/5/50/Agentdalecooper.jpg"
-  });
-  res.send(state.users[state.users.length - 1]);
+  res.json(req.body);
 });
+
+// app.post("/users", (req, res) => {
+//   state.users.push({
+//     _id: 6,
+//     name: "David CopperField",
+//     occupation: "Street Magician",
+//     avatar: "https://upload.wikimedia.org/wikipedia/en/5/50/Agentdalecooper.jpg"
+//   });
+//   res.send(state.users[state.users.length - 1]);
+// });
 
 app.get("/users", (req, res) => res.send(state.users));
 
